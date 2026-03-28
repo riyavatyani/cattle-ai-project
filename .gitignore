@@ -1,0 +1,5 @@
+ai_service/venv/
+venv/
+node_modules/
+.expo/
+uploads/
