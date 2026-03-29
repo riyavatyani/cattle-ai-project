@@ -1,5 +1,20 @@
+# Python
 ai_service/venv/
 venv/
+__pycache__/
+*.pyc
+
+# Node / Expo
 node_modules/
 .expo/
+.expo-shared/
+
+# Uploads (temp images)
 uploads/
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

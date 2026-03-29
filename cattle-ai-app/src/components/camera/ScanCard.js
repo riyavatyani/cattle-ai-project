@@ -1,23 +1,23 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
+import { translations } from "../../constants/translations";
 
-export default function ScanCard({ onScanPress, onUploadPress }) {
+export default function ScanCard({ onScanPress, onUploadPress, language = "en" }) {
+
+  const t = translations[language] ?? translations["en"];
+
   return (
     <View style={styles.card}>
 
       <Text style={styles.icon}>📷</Text>
-
-      <Text style={styles.title}>Scan Cow</Text>
-
-      <Text style={styles.subtitle}>
-        Capture or upload cow image for AI detection
-      </Text>
+      <Text style={styles.title}>{t.scanTitle}</Text>
+      <Text style={styles.subtitle}>{t.scanSubtitle}</Text>
 
       <Pressable style={styles.scanButton} onPress={onScanPress}>
-        <Text style={styles.buttonText}>Start Scan</Text>
+        <Text style={styles.buttonText}>{t.startScan}</Text>
       </Pressable>
 
       <Pressable style={styles.uploadButton} onPress={onUploadPress}>
-        <Text style={styles.uploadText}>Upload Image</Text>
+        <Text style={styles.uploadText}>{t.uploadImage}</Text>
       </Pressable>
 
     </View>
@@ -25,58 +25,63 @@ export default function ScanCard({ onScanPress, onUploadPress }) {
 }
 
 const styles = StyleSheet.create({
-
-  card:{
-    backgroundColor:"white",
-    padding:25,
-    borderRadius:20,
-    alignItems:"center",
-    marginBottom:20,
-    shadowColor:"#000",
-    shadowOpacity:0.1,
-    shadowRadius:10,
-    elevation:5
+  card: {
+    backgroundColor: "white",
+    padding: 24,
+    borderRadius: 20,
+    alignItems: "center",
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: "#dcedc8",
+    shadowColor: "#a5d6a7",
+    shadowOpacity: 0.25,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+    elevation: 4,
   },
-
-  icon:{
-    fontSize:40,
-    marginBottom:10
+  icon: {
+    fontSize: 38,
+    marginBottom: 10,
   },
-
-  title:{
-    fontSize:20,
-    fontWeight:"bold"
+  title: {
+    fontSize: 19,
+    fontWeight: "800",
+    color: "#1b5e20",
+    marginBottom: 5,
   },
-
-  subtitle:{
-    color:"gray",
-    marginBottom:15
+  subtitle: {
+    color: "#6a8f6a",
+    fontSize: 13,
+    textAlign: "center",
+    marginBottom: 18,
+    paddingHorizontal: 10,
   },
-
-  scanButton:{
-    backgroundColor:"#2e7d32",
-    paddingVertical:12,
-    paddingHorizontal:30,
-    borderRadius:10,
-    marginBottom:10
+  scanButton: {
+    backgroundColor: "#43a047",
+    paddingVertical: 13,
+    paddingHorizontal: 36,
+    borderRadius: 12,
+    marginBottom: 10,
+    width: "100%",
+    alignItems: "center",
   },
-
-  buttonText:{
-    color:"white",
-    fontWeight:"bold"
+  buttonText: {
+    color: "white",
+    fontWeight: "700",
+    fontSize: 15,
   },
-
-  uploadButton:{
-    borderWidth:1,
-    borderColor:"#2e7d32",
-    paddingVertical:10,
-    paddingHorizontal:30,
-    borderRadius:10
+  uploadButton: {
+    paddingVertical: 12,
+    paddingHorizontal: 36,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: "#a5d6a7",
+    width: "100%",
+    alignItems: "center",
   },
-
-  uploadText:{
-    color:"#2e7d32",
-    fontWeight:"bold"
-  }
-
+  uploadText: {
+    color: "#2e7d32",
+    fontWeight: "700",
+    fontSize: 15,
+  },
 });

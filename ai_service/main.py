@@ -38,32 +38,54 @@ print("Breed labels:", len(breed_labels))
 print("Disease labels:", len(disease_labels))
 
 
-# Image preprocessing
+# 🔥 SAFE PREPROCESS (ResNet compatible + stable)
 def preprocess(image, interpreter):
 
-    image = image.resize((224, 224))
-    image = np.array(image)
-
     input_details = interpreter.get_input_details()
+    input_shape = input_details[0]['shape']
 
+    height = input_shape[1]
+    width = input_shape[2]
+
+    image = image.resize((width, height))
+    image = np.array(image).astype(np.float32)
+
+    # ✅ FLOAT MODEL (most cases)
     if input_details[0]['dtype'] == np.float32:
-        image = image.astype(np.float32) / 255.0
+
+        # 🔥 Manual ResNet preprocessing (NO keras import)
+        image = image[..., ::-1]  # RGB → BGR
+        image[..., 0] -= 103.939
+        image[..., 1] -= 116.779
+        image[..., 2] -= 123.68
+
+        print("Using ResNet-style preprocessing")
+
+    # ✅ QUANTIZED MODEL
     else:
+        scale, zero_point = input_details[0]['quantization']
+
+        if scale > 0:
+            image = image / scale + zero_point
+
         image = image.astype(np.uint8)
+        print("Using quantized preprocessing")
 
     image = np.expand_dims(image, axis=0)
+
+    print("Shape:", image.shape)
+    print("Range:", image.min(), image.max())
 
     return image
 
 
-# Prediction helper
+# 🔥 Prediction helper
 def predict(interpreter, image, labels):
 
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
     interpreter.set_tensor(input_details[0]['index'], image)
-
     interpreter.invoke()
 
     output = interpreter.get_tensor(output_details[0]['index'])[0]
@@ -80,16 +102,15 @@ def predict(interpreter, image, labels):
 async def predict_image(file: UploadFile = File(...)):
 
     try:
-
-        print("\nImage received for prediction")
+        print("\n📸 Image received for prediction")
 
         image = Image.open(file.file).convert("RGB")
 
-        # Breed prediction
+        # 🐄 Breed prediction
         breed_input = preprocess(image, breed_model)
         breed_idx, breed_conf = predict(breed_model, breed_input, breed_labels)
 
-        # Disease prediction
+        # 🦠 Disease prediction
         disease_input = preprocess(image, disease_model)
         disease_idx, disease_conf = predict(disease_model, disease_input, disease_labels)
 
@@ -100,13 +121,13 @@ async def predict_image(file: UploadFile = File(...)):
             "disease_confidence": round(disease_conf * 100, 2)
         }
 
-        print("Returning:", response)
+        print("✅ Returning:", response)
 
         return response
 
     except Exception as e:
 
-        print("Prediction error:", str(e))
+        print("❌ Prediction error:", str(e))
 
         return {
             "breed": "Unknown",

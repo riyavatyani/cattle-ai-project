@@ -1,15 +1,154 @@
 export const translations = {
-
   en: {
+    // General
     title: "Cattle AI Scanner",
     scan: "Scan Cow",
-    help: "Instructions"
+    help: "Instructions",
+    recentScans: "📊 Recent Scans",
+    noScans: "No scans yet — scan a cow to get started!",
+    healthy: "Healthy",
+    confidence: "Confidence",
+    seeAll: "See All",
+    // Stats
+    totalScans: "Total",
+    healthyCount: "Healthy",
+    diseasedCount: "Diseased",
+    healthSummary: "Herd Health",
+    of: "of",
+    cowsHealthy: "scans healthy",
+    // AllScans
+    allScansTitle: "All Scans",
+    allScansRecorded: "scans recorded",
+    clearAll: "Clear All",
+    clearTitle: "Clear History",
+    clearConfirm: "Are you sure you want to delete all scan history?",
+    cancel: "Cancel",
+    // HeroSection
+    heroTitle: "🐄 Cattle AI Scanner",
+    heroSubtitle: "Detect cattle breed & diseases instantly using AI",
+    statBreeds: "Breeds",
+    statDiseases: "Diseases",
+    statPowered: "Powered",
+    // ScanCard
+    scanTitle: "Scan Cow",
+    scanSubtitle: "Capture or upload cow image for AI detection",
+    startScan: "Start Scan",
+    uploadImage: "Upload Image",
+    // FeatureGrid
+    featureBreed: "Breed Detection",
+    featureDisease: "Disease Detection",
+    featureAI: "AI Confidence",
+    // HelpCard
+    helpTitle: "How to Use",
+    helpStep1: "Open the Scan tab",
+    helpStep2: "Capture a clear image",
+    helpStep3: "AI analyzes the image",
+    helpStep4: "View your results",
+    // HelpScreen
+    helpSubtitle: "Learn how to scan your cattle with AI",
+    stepsTitle: "Steps to Follow",
+    tipsTitle: "Quick Tips",
+    helpStep1Desc: "Tap the Scan icon at the bottom of the screen",
+    helpStep2Desc: "Make sure the cow is well-lit and fully visible",
+    helpStep3Desc: "Our model detects breed and any diseases",
+    helpStep4Desc: "See breed, disease and confidence score",
+    tip1: "Use natural daylight for best results",
+    tip2: "Keep the cow centered in the frame",
+    tip3: "Avoid blurry or dark images",
+    // ResultScreen
+    resultTitle: "AI Result",
+    resultSubtitle: "Breed & disease detected by AI",
+    scannedImage: "Scanned Image",
+    analyzing: "Analyzing image...",
+    statusHealthy: "This cow appears healthy!",
+    statusSick: "Disease detected — consult a vet",
+    breed: "Breed",
+    disease: "Disease",
+    backHome: "Back to Home",
+    newScan: "New Scan",
+    // CameraScreen
+    cameraTitle: "Scan Cow",
+    cameraPermissionTitle: "Camera Access Needed",
+    cameraPermissionSub: "We need camera access to scan your cattle",
+    grantPermission: "Grant Permission",
+    back: "Back",
+    frameHint: "Position cow within frame",
   },
 
   hi: {
+    // General
     title: "गाय पहचान प्रणाली",
     scan: "गाय स्कैन करें",
-    help: "निर्देश"
-  }
+    help: "निर्देश",
+    recentScans: "📊 हालिया स्कैन",
+    noScans: "अभी कोई स्कैन नहीं — शुरू करने के लिए गाय स्कैन करें!",
+    healthy: "स्वस्थ",
+    confidence: "विश्वास",
+    seeAll: "सभी देखें",
+    // Stats
+    totalScans: "कुल",
+    healthyCount: "स्वस्थ",
+    diseasedCount: "बीमार",
+    healthSummary: "पशु स्वास्थ्य",
+    of: "में से",
+    cowsHealthy: "स्कैन स्वस्थ",
+    // AllScans
+    allScansTitle: "सभी स्कैन",
+    allScansRecorded: "स्कैन दर्ज किए गए",
+    clearAll: "सभी हटाएं",
+    clearTitle: "इतिहास साफ करें",
+    clearConfirm: "क्या आप सभी स्कैन इतिहास हटाना चाहते हैं?",
+    cancel: "रद्द करें",
+    // HeroSection
+    heroTitle: "🐄 गाय AI स्कैनर",
+    heroSubtitle: "AI की मदद से तुरंत नस्ल और बीमारी पहचानें",
+    statBreeds: "नस्लें",
+    statDiseases: "बीमारियाँ",
+    statPowered: "संचालित",
+    // ScanCard
+    scanTitle: "गाय स्कैन करें",
+    scanSubtitle: "AI पहचान के लिए गाय की फोटो लें या अपलोड करें",
+    startScan: "स्कैन शुरू करें",
+    uploadImage: "छवि अपलोड करें",
+    // FeatureGrid
+    featureBreed: "नस्ल पहचान",
+    featureDisease: "बीमारी पहचान",
+    featureAI: "AI विश्वास",
+    // HelpCard
+    helpTitle: "उपयोग कैसे करें",
+    helpStep1: "स्कैन टैब खोलें",
+    helpStep2: "स्पष्ट फोटो लें",
+    helpStep3: "AI छवि का विश्लेषण करता है",
+    helpStep4: "परिणाम देखें",
+    // HelpScreen
+    helpSubtitle: "AI से अपनी गाय स्कैन करना सीखें",
+    stepsTitle: "अनुसरण करने के चरण",
+    tipsTitle: "त्वरित सुझाव",
+    helpStep1Desc: "स्क्रीन के नीचे स्कैन आइकन पर टैप करें",
+    helpStep2Desc: "सुनिश्चित करें गाय अच्छी रोशनी में और पूरी दिखे",
+    helpStep3Desc: "हमारा मॉडल नस्ल और बीमारी पहचानता है",
+    helpStep4Desc: "नस्ल, बीमारी और विश्वास स्कोर देखें",
+    tip1: "सर्वोत्तम परिणाम के लिए प्राकृतिक प्रकाश का उपयोग करें",
+    tip2: "गाय को फ्रेम के बीच में रखें",
+    tip3: "धुंधली या अंधेरी छवियों से बचें",
+    // ResultScreen
+    resultTitle: "AI परिणाम",
+    resultSubtitle: "AI द्वारा नस्ल और बीमारी पहचानी गई",
+    scannedImage: "स्कैन की गई छवि",
+    analyzing: "छवि का विश्लेषण हो रहा है...",
+    statusHealthy: "यह गाय स्वस्थ दिखती है!",
+    statusSick: "बीमारी मिली — पशु चिकित्सक से मिलें",
+    breed: "नस्ल",
+    disease: "बीमारी",
+    backHome: "होम पर जाएं",
+    newScan: "नया स्कैन",
+    // CameraScreen
+    cameraTitle: "गाय स्कैन करें",
+    cameraPermissionTitle: "कैमरा अनुमति आवश्यक है",
+    cameraPermissionSub: "गाय स्कैन करने के लिए कैमरा अनुमति दें",
+    grantPermission: "अनुमति दें",
+    back: "वापस",
+    frameHint: "गाय को फ्रेम में रखें",
+  },
 
 };
