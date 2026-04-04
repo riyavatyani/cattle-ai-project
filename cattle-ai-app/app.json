@@ -20,13 +20,22 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.riyavatyani.cattleaiapp",
+      "assetBundlePatterns": [
+        "assets/**"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "032bd9c6-4355-47c7-beea-ecb3fad8443d"
+      }
+    }
   }
 }

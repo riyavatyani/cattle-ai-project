@@ -1,25 +1,38 @@
 {
-  "name": "backend",
+  "name": "cattle-ai-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@react-navigation/bottom-tabs": "^7.15.5",
-    "@react-navigation/native": "^7.1.33",
-    "axios": "^1.13.6",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "form-data": "^4.0.5",
-    "multer": "^2.1.1",
-    "react-native-safe-area-context": "^5.7.0",
-    "react-native-screens": "^4.24.0"
-  }
+    "@react-native-async-storage/async-storage": "2.1.2",
+    "@react-native-community/netinfo": "11.4.1",
+    "@react-navigation/bottom-tabs": "^7.2.0",
+    "@react-navigation/native": "^7.0.14",
+    "@react-navigation/native-stack": "^7.2.0",
+    "axios": "^1.7.9",
+    "expo": "~55.0.11",
+    "expo-asset": "~55.0.12",
+    "expo-camera": "~55.0.13",
+    "expo-file-system": "~55.0.14",
+    "expo-image-picker": "~55.0.16",
+    "expo-linear-gradient": "~55.0.11",
+    "expo-location": "~55.1.6",
+    "expo-status-bar": "~55.0.5",
+    "expo-system-ui": "~5.0.10",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-gesture-handler": "~2.30.0",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
+    "react-native-svg": "15.11.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2"
+  },
+  "private": true
 }

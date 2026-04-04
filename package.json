@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@react-native-community/netinfo": "11.5.2",
+    "expo-image-manipulator": "~55.0.13",
+    "react-native-fast-tflite": "^2.0.0"
+  }
+}

@@ -18,3 +18,8 @@ uploads/
 # OS files
 .DS_Store
 Thumbs.db
+android/
+ios/
+dist/
+build/
+*.log
